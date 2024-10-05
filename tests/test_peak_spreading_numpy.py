@@ -27,7 +27,9 @@ def do_peak_spreading_non_numpy(self):
                 % self.spread_fft_output.buffer_size
             ]
 
-            former_fft_output[position] = max_value = max(former_fft_output[position], max_value)
+            former_fft_output[position] = max_value = max(
+                former_fft_output[position], max_value
+            )
 
     # Save output locally
 

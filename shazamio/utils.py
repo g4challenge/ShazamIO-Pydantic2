@@ -18,7 +18,9 @@ SongT = Union[str, pathlib.Path, bytes, bytearray]
 FileT = Union[str, pathlib.Path]
 
 
-async def validate_json(resp: aiohttp.ClientResponse, content_type: str = "application/json"):
+async def validate_json(
+    resp: aiohttp.ClientResponse, content_type: str = "application/json"
+):
     try:
         return await resp.json(content_type=content_type)
     except ContentTypeError as e:

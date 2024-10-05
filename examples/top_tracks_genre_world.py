@@ -4,7 +4,9 @@ from shazamio import Shazam, Serialize, GenreMusic
 
 async def main():
     shazam = Shazam()
-    top_rock_in_the_world = await shazam.top_world_genre_tracks(genre=GenreMusic.ROCK, limit=10)
+    top_rock_in_the_world = await shazam.top_world_genre_tracks(
+        genre=GenreMusic.ROCK, limit=10
+    )
 
     serialized = Serialize.playlists(top_rock_in_the_world)
     print(serialized)

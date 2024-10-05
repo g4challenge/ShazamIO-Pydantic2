@@ -2,7 +2,7 @@
 name = "shazamio"
 version = "0.6.1"
 description = "Is a asynchronous framework from reverse engineered Shazam API written in Python 3.8+ with asyncio and aiohttp."
-#authors = [{"dotX12"}]
+authors = [{name="dotX12"}]
 license = {text = "MIT License"}
 keywords = ["python", "shazam", "music", "recognize", "api", "async", "asyncio", "aiohttp", "identification"]
 readme = "README.md"
@@ -27,7 +27,7 @@ dependencies=[
 
 requires-python = ">= 3.10"
 
-[tool.poetry.dev-dependencies]
+[tool.dev-dependencies]
 black = {version = "^24.2.0", allow-prereleases = true}
 pytest = "8.1.2"
 pytest-asyncio = "^0.23.6"
@@ -45,3 +45,9 @@ filterwarnings = ["ignore::DeprecationWarning"]
 
 [tool.black]
 line-length = 100
+
+[tool.uv]
+dev-dependencies = [
+    "pytest-asyncio>=0.24.0",
+    "pytest>=8.3.3",
+]

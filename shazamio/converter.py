@@ -76,7 +76,9 @@ class GeoService:
             raise BadParseData("Top key not found in shazam locations")
         return top["listid"]
 
-    async def get_genre_from_country(self, country: CountryCode, genre: GenreMusic) -> str:
+    async def get_genre_from_country(
+        self, country: CountryCode, genre: GenreMusic
+    ) -> str:
         """
         Return Global Genre playlistID from country name and genre urlName from https://www.shazam.com/services/charts/locations
             :param country: - Country code, format: ISO 3166-3 alpha-2 code. Example: RU,NL,UA
@@ -100,7 +102,9 @@ class GeoService:
 
 class Converter:
     @staticmethod
-    def data_search(timezone: str, uri: str, samplems: int, timestamp: int) -> Dict[str, Any]:
+    def data_search(
+        timezone: str, uri: str, samplems: int, timestamp: int
+    ) -> Dict[str, Any]:
         return {
             "timezone": timezone,
             "signature": {"uri": uri, "samplems": samplems},
@@ -123,5 +127,7 @@ class Converter:
         signature_generator.feed_input(audio.get_array_of_samples())
         signature_generator.MAX_TIME_SECONDS = 12
         if audio.duration_seconds > 12 * 3:
-            signature_generator.samples_processed += 16000 * (int(audio.duration_seconds / 2) - 6)
+            signature_generator.samples_processed += 16000 * (
+                int(audio.duration_seconds / 2) - 6
+            )
         return signature_generator

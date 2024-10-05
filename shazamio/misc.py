@@ -34,16 +34,12 @@ class ShazamUrl:
     LISTENING_COUNTER = "https://www.shazam.com/services/count/v2/web/track/{}"
     LISTENING_COUNTER_MANY = "https://www.shazam.com/services/count/v2/web/track"
 
-    SEARCH_ARTIST_V2 = (
-        "https://www.shazam.com/services/amapi/v1/catalog/{endpoint_country}/artists/{artist_id}"
-    )
+    SEARCH_ARTIST_V2 = "https://www.shazam.com/services/amapi/v1/catalog/{endpoint_country}/artists/{artist_id}"
     ARTIST_ALBUMS = (
         "https://www.shazam.com/services/amapi/v1/catalog/{endpoint_country}"
         "/artists/{artist_id}/albums?limit={limit}&offset={offset}"
     )
-    ARTIST_ALBUM_INFO = (
-        "https://www.shazam.com/services/amapi/v1/catalog/{endpoint_country}/albums/{album_id}"
-    )
+    ARTIST_ALBUM_INFO = "https://www.shazam.com/services/amapi/v1/catalog/{endpoint_country}/albums/{album_id}"
 
 
 class Request:

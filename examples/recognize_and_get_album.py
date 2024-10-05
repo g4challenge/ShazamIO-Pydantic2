@@ -24,16 +24,16 @@ async def main():
 
     new_version_path = await shazam.recognize("data/Gloria.ogg")
 
-    album_info = await shazam.search_album(album_id=new_version_path["track"]["albumadamid"])
+    album_info = await shazam.search_album(
+        album_id=new_version_path["track"]["albumadamid"]
+    )
     album_serialized = Serialize.album_info(data=album_info)
     # Get album name
     print(album_serialized.data[0].attributes.name)
 
     # And get all tracks in album
     for i in album_serialized.data[0].relationships.tracks.data:
-        msg = (
-            f"{i.id} | {i.attributes.album_name} | {i.attributes.artist_name} [{i.attributes.name}]"
-        )
+        msg = f"{i.id} | {i.attributes.album_name} | {i.attributes.artist_name} [{i.attributes.name}]"
         print(msg)
 
 

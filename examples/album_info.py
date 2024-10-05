@@ -8,9 +8,7 @@ async def main():
     serialized = Serialize.album_info(data=albums)
 
     for i in serialized.data[0].relationships.tracks.data:
-        msg = (
-            f"{i.id} | {i.attributes.album_name} | {i.attributes.artist_name} [{i.attributes.name}]"
-        )
+        msg = f"{i.id} | {i.attributes.album_name} | {i.attributes.artist_name} [{i.attributes.name}]"
         print(msg)
 
 
